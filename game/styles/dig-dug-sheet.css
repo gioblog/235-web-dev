@@ -1,0 +1,18 @@
+h1, h3 { 
+    .barriecito-regular {
+    font-family: "Barriecito", system-ui;
+    font-weight: 400;
+    font-style: normal; } 
+}
+
+ h1 { color:red; border-bottom: 1px solid blue;}
+
+ h3 { color: orange; }
+
+ blockquote { background-color: lightgray; padding: 1rem; }
+
+ body { background-color: #83a7ce; }
+
+ p { margin-left: 100px; font-family: Arial, sans-serif; }
+
+ img.side { float:right; margin: 0 12px; }
