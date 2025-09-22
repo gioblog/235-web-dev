@@ -1,12 +1,20 @@
 /* Do everything in this file */
 
-hr {background-color: red; height: 1px; } /* wants me to use border-bottom property? */ 
+h1, h2, h3, h4 { border-bottom: 2px solid red; }
 
-/*tetris diagram shifted to the right */ 
-figure {float: right; width: 40%; margin-right: 1rem; }
+/*tetris diagram shifted to the right*/ 
+figure { float: right; width: 40%; margin-right: 1rem; }
 
 figure img { width: 95%; }
 
 
-/* making h2 appear underneath diagram */ 
+/*tetris elements shifted to the left*/ 
+.tet, .tet-long, .tet-square { float: left; width: 40%; border: 6px dotted purple; margin: 3rem 1rem;}
+
+/*making h2 appear underneath diagram*/ 
 h2 {clear: right;}
+
+header, main { margin: 3rem; }
+
+footer { clear: left; position: fixed; bottom: 750px;  z-index: -1; margin-left: 3rem;} /* z-index values are integers */  
+
