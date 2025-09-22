@@ -1,0 +1,34 @@
+
+.blobs { border-radius: 30px; background-color: #405776; margin: 2rem; padding: 2rem; display: flex; } 
+
+article { width: 70%; height: 40vh; padding-top: 5%; padding-bottom: 10%; }
+
+article p { font-size: 18px; line-height: 45px;}
+
+#polaroid { border: solid; background-color:#95B594; text-align: left; height: 50vh;  
+    display: flex; align-items: center; justify-content: center; flex-direction: column; }
+
+#polaroid hr { width: 99%; border-bottom: 2px solid; color: rgb(252, 245, 209); margin-bottom: 40px }
+
+#introduction { display: flex; margin: 3rem; align-items: center; justify-content: center;}
+
+#links { justify-content: space-evenly; }
+
+#links a:link, a:visited { color: #A8DDE4; text-decoration: none; }
+
+#links a:hover, a:active { color:#CDECCC;  text-decoration: wavy underline; }
+
+.fit-picture { height: 70%; padding: 0 1vw; }
+
+body { font-family: "Merriweather", serif; background-color: #2B355A; color: rgb(252, 245, 209); text-align: center;}
+
+h2 { font-style: italic; }
+
+footer { justify-content: center; margin: 2rem auto; margin-bottom: 2rem; padding: 2rem; display: flex; width: 70%;  border-radius: 30px; 
+    background-color: #405776; font-size: 16px; }
+
+footer a:link, a:visited { color: #A8DDE4; text-decoration: none; }
+
+footer a:hover, a:active { color:#CDECCC;  text-decoration: wavy underline; }
+
+

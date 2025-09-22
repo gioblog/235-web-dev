@@ -1,3 +1,6 @@
+
+main { border: black solid 1px; margin: 0 auto; width: 80%; padding: 3rem; background-color:#794041; }
+
 h1, h3 { 
     .barriecito-regular {
     font-family: "Barriecito", system-ui;
@@ -5,14 +8,19 @@ h1, h3 {
     font-style: normal; } 
 }
 
- h1 { color:red; border-bottom: 1px solid blue;}
+ h1 { color:#d28aae; border-bottom: 1px solid blue; }
 
- h3 { color: orange; }
+ h3 { color: #e3475c; }
 
- blockquote { background-color: lightgray; padding: 1rem; }
+ blockquote { background-color: lightgray; color: black; padding: 1rem; }
 
- body { background-color: #83a7ce; }
+ body { background-color: #451B1C; color: lightgrey; }
+
+ a {color: #89A5C9; }
 
  p { margin-left: 100px; font-family: Arial, sans-serif; }
 
  img.side { float:right; margin: 0 12px; }
+
+ footer {background-color: #cab4f0; color: #892835; }
+  footer a {color: rgb(47, 67, 93); }
