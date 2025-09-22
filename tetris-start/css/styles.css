@@ -1,0 +1,12 @@
+/* Do everything in this file */
+
+hr {background-color: red; height: 1px; } /* wants me to use border-bottom property? */ 
+
+/*tetris diagram shifted to the right */ 
+figure {float: right; width: 40%; margin-right: 1rem; }
+
+figure img { width: 95%; }
+
+
+/* making h2 appear underneath diagram */ 
+h2 {clear: right;}
