@@ -1,1 +1,19 @@
-figure { max-width: 650px; }
+figure { max-width: 650px; margin: auto; }
+
+figure img { width: 100%; }
+
+header, main, footer { max-width: 90%; margin: auto; }
+
+#tetlist { display: flex; flex-flow: wrap row; text-align: center; }
+
+.tetlong { display: flex; flex: 1 0 450px; border: 1px solid black; }
+
+.tet { flex: 0 1 450px; border: 1px solid black; }
+
+.tetsquare { flex: 1 0 450px; border: 1px solid  black; }
+
+#tetlist img { width: 60%; }
+
+section span {display: block; margin: 1rem auto; font-size: 20px; font-weight: bold; }
+
+.aliases { margin: 1rem; text-align: left; }
