@@ -46,8 +46,8 @@ footer{text-align: right; margin-right: 1rem;}
     z-index: 2;
 }
 
-#diagonalImage{transform:rotate(45deg); padding-top: 25px; width: 285px; position: absolute; left:-15rem}
-
+#diagonalImage{transform:rotate(45deg); padding-top: 25px; width: 285px; position: absolute; left:-15rem; float: left; shape-outside:url("media\sideways element.png")}
+#cornerWrap{float: left; shape-outside: url("media\sideways element.png");}
 /*overall website layout*/
 #wrapper{  /*mobile*/ 
     display: grid;  /*don't define rows and columns because everything appears after the other*/
