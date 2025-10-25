@@ -1,6 +1,8 @@
+/*fonts*/
+
 /*headings*/
-h1{font-style: bold;}
-h2{font-style: bold;}
+h1{font-weight: bold;}
+h2{font-weight: bold;}
 h3{color: white;}
 
 /*misc.*/
@@ -21,7 +23,7 @@ footer{text-align: right; margin-right: 1rem;}
 }
 
 #flexContent section{
-        margin-left: auto; 
+        margin-left: 4rem; 
         margin-top: 1rem; 
         background-color: rgb(228, 138, 3); 
         max-width: 250px;
@@ -39,7 +41,7 @@ footer{text-align: right; margin-right: 1rem;}
 
 #blackDisplay h1{color: rgb(228, 138, 3); text-align: left; padding-top: 8px; margin-left: 1rem;}
 
-#blackDisplay article{background-color: black; width: 700px; margin-left: 300px; position: relative;}
+#blackDisplay article{background-color: black; width: 700px; margin-left: 300px; position: relative; transform:translateY(20px);}
 
 #blackDisplay article>:not(#diagonalImage){
     position: relative;
@@ -47,10 +49,29 @@ footer{text-align: right; margin-right: 1rem;}
 }
 
 #diagonalImage{transform:rotate(45deg); padding-top: 25px; width: 285px; position: absolute; left:-15rem; float: left; shape-outside:url("media\sideways element.png")}
-#cornerWrap{float: left; shape-outside: url("media\sideways element.png");}
+#cornerWrap{float: left; shape-outside: url("media\sideways element.png"); shape-margin: 15px; shape-image-threshold: 0.5px;}
+
+#bestHeader{transform: translateX(300px);}
+
+/*footer*/ 
+
+#seasonIssued{padding-left: 30px;}
+#VE, #halfR, #GE{font-weight: bold;}
+
+/*attempt to wrap text around image - need guidance*/ 
+#halfR{
+    background: linear-gradient(to right, black 50%, red 50%); 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+
+#GE{color: red;}
+
 /*overall website layout*/
 #wrapper{  /*mobile*/ 
     display: grid;  /*don't define rows and columns because everything appears after the other*/
+    grid-template-rows: auto auto auto 400px auto;
     grid-template-areas: 
         "header"
         "content" 
@@ -64,7 +85,7 @@ footer{text-align: right; margin-right: 1rem;}
 @media(min-width: 850px){
     #wrapper{ 
         grid-template-columns: 1199px 203px; /*scaled image down by 85%*/ 
-        grid-template-rows: 830px 500px auto auto;
+        grid-template-rows: 808px 500px 380px auto;
         grid-template-areas: 
             "header    sidebar"
             "content   sidebar"
@@ -72,13 +93,16 @@ footer{text-align: right; margin-right: 1rem;}
             "footer    footer"
     }
 
+    #flexContent section{
+        margin-left: auto; }
+
     #blackDisplay{
         text-align: right;
         margin-right: 1rem; 
     }
 
     #blackDisplay h1{margin-top: 10px;}
-    #bestHeader{margin-right: 505px;}
+    #bestHeader{margin-right: 814px;}
     #blackDisplay p{float: center; margin-right: 15px; padding-left: 20px; padding-bottom: 0px;}
     #blackDisplay article{float: right; margin: 0px;}
 }
@@ -91,11 +115,30 @@ footer{text-align: right; margin-right: 1rem;}
 footer{grid-area: footer;}
 
 /*text-image setup*/ 
-#pageHeader{position: relative; width: 1199px; height: 830px;}
+#pageHeader{position: relative; width: 1199px; height: 808px;}
 #titleImg{width: 100%; height: 100%;  object-fit: fill;}
-#title{position: absolute; left: 5%; right: 85%; transform: translate( -5% -85%);}
+#title{font-family: sans-serif; position: absolute; left: 5%; right: 85%; transform: translate( -5% -85%);}
 
-/*include edits to each letter within the website heading 'BUZZ'*/
-
+/*letter positioning for text-image setup*/ 
+#B{font-size: 100px;}
+#U{
+    font-size: 110px; 
+    position: absolute;
+    transform: translateY(30px); 
+    left: 33%;
+    top: 11%;
+}
+#redZ{
+    font-size: 120px;
+    position: absolute;
+    left: 76%;
+    z-index: 2;
+}
+#Z{
+    font-size: 120px;
+    top: 50%;
+    position: absolute;
+    left: 88%;
+}
 #descriptor{position: absolute; top:94%; right: 83%; transform: translate(-94% -83%)}
 
