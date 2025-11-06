@@ -109,8 +109,13 @@ footer{text-align: right; margin-right: 1rem;}
     #blackDisplay p{float: center; margin-right: 15px; padding-left: 20px; padding-bottom: 0px;}
     #blackDisplay article{float: right; margin: 0px; transform:translateY(-5px);}
     #collection{transform: translateX(0px);}
+    @media(min-width: 1457px){
+        #wrapper{justify-content: center;}
+    }
 
 }
+
+
 
 /*define what text belongs in what section of the grid*/
 #pageHeader{grid-area: header; }
