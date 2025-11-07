@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <li> Charzard </li>
+    <li> Squirtle </li>
+    <li>bulbar Saur </li>
+    <li>girl</li>
+    <li>boy</li>
+    <script>
+        let pokemons = document.getElementsByTagName("li"); //or document.querySelectore("li") returns the first li element 
+        const rainbow = ["red", "orange", "yellow", "green", ]; 
+        for(let i = 0; i < pokemons.length; i++){
+            Add(i);  
+            //setColor(pokemons[i], rainbow[i % rainbow.length])
+        }
+        
+    function Add(i)
+    {
+        pokemons[i].style.color = rainbow[i % rainbow.length]; 
+    }
+
+    const setColor = (element, color) => {
+        element.style.color = color; 
+    }
+    </script>
+</body>
+</html>
