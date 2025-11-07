@@ -6,7 +6,7 @@ h2{font-weight: bold;}
 h3{color: white;}
 
 /*misc.*/
-.redWriting{color: rgb(64, 114, 208);}
+.blueWriting{color: rgb(64, 114, 208);}
 body{background-color: rgb(32, 32, 67); color :beige;}
 p{font-family: 'Merriweather', 'Times New Roman', sans-serif;}
 footer{text-align: right; margin-right: 1rem;}
@@ -40,11 +40,12 @@ footer{text-align: right; margin-right: 1rem;}
 
 #mainText {margin-left: 0px; margin-bottom:0px;}
 
-#blackDisplay p{max-width: 600px; color: white; text-align: left; column-count: 3; padding-left: 60px; padding-bottom: 15px;}
+li {margin-bottom: 1rem;}
+#blackDisplay p{max-width: 827px; color: white; text-align: left; column-count: 3; padding-left: 60px; padding-right: 60px; padding-bottom: 25px;}
 
 #blackDisplay h1{color: rgb(3, 160, 228); text-align: left; padding-top: 8px; margin-left: 1rem;}
 
-#blackDisplay article{background-color: black; width: 700px; margin-left: 300px; position: relative; transform: translateY(-22px)}
+#blackDisplay article{background-color: black; width: 909px; margin-left: 300px; position: relative; transform: translateY(7px)}
 
 #blackDisplay article>:not(#diagonalImage){
     position: relative;
@@ -52,24 +53,24 @@ footer{text-align: right; margin-right: 1rem;}
 }
 
 #collection{width:700px; height: auto; transform: translateX(300px) translateY(5px)}
-#diagonalImage{transform:rotate(45deg); padding-top: 25px; width: 285px; position: absolute; left:-15rem; float: left; shape-outside:url("media\sideways element.png")}
-#cornerWrap{float: left; shape-outside: url("media\sideways element.png"); shape-margin: 15px; shape-image-threshold: 0.5px;}
+#diagonalImage{float: left; transform:rotate(45deg); padding-top: 25px; width: 285px; position: absolute; left:-15rem; shape-outside:url("../media/sideways element.png")}
+#cornerWrap{float: left; shape-outside: url("../media/sideways element.png"); shape-margin: 15px; shape-image-threshold: 0.5px;}
 
 #bestHeader{transform: translateX(300px) translateY(31px);}
 
 /*footer*/ 
 #seasonIssued{padding-left: 30px;}
-#VE, #halfR, #GE{font-weight: bold;}
+#SI, #halfG, #HT{font-size: 24px; font-weight: bold;}
 
 /*attempt to wrap text around image - need guidance*/ 
-#halfR{
-    background: linear-gradient(to right, black 50%, red 50%); 
+#halfG{
+    background: linear-gradient(to right, beige 50%, rgb(140, 207, 240) 50%); 
     background-clip: text; 
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent;
 }
 
-#GE{color: red;}
+#HT{color: rgb(140, 207, 240);}
 
 /*overall website layout*/
 #wrapper{  /*mobile*/ 
@@ -80,7 +81,7 @@ footer{text-align: right; margin-right: 1rem;}
         "content" 
         "sidebar"
         "sidenote"
-        "footer"
+        "footer";
 }
 
 /*change image size for desktop to its original size*/ 
@@ -102,16 +103,17 @@ footer{text-align: right; margin-right: 1rem;}
     #blackDisplay{
         text-align: right;
         margin-right: 1rem; 
+        justify-self: flex-start; /*centering*/
     }
 
     #blackDisplay h1{margin-top: 10px;}
-    #bestHeader{margin-right: 814px; transform: translateX(390px) translateY(26px);}
-    #blackDisplay p{float: center; margin-right: 15px; padding-left: 20px; padding-bottom: 0px;}
-    #blackDisplay article{float: right; margin: 0px; transform:translateY(-5px);}
+    #bestHeader{margin-right: 814px; transform: translateX(180px) translateY(26px);}
+    #blackDisplay p{float: center; margin-right: 15px; padding-left: 60px; padding-bottom: 0px;}
+    #blackDisplay article{float: right; margin: 0px; transform:translateY(2px);}
     #collection{transform: translateX(0px);}
     @media(min-width: 1457px){
         #wrapper{justify-content: center;}
-    }
+    } 
 
 }
 
@@ -138,7 +140,7 @@ footer{grid-area: footer;}
     left: 33%;
     top: 11%;
 }
-#redZ{
+#blueZ{
     font-size: 120px;
     position: absolute;
     left: 76%;
