@@ -19,15 +19,18 @@ footer{text-align: right; margin-right: 1rem;}
         height: 500px; 
     }
 
-#flexContent article{
-        max-width: 600px; 
-}
+#flexContent p{font-size: 23px;}
+
+#flexContent article{max-width: 600px; }
 
 #flexContent section{
-        margin-left: 4rem; 
+        margin-left: 6rem; 
         margin-top: 1rem; 
         background-color: rgb(154, 252, 221); 
-        max-width: 250px;
+        max-width: 400px;
+        height: 573px; 
+        padding-left: 10px; 
+        padding-right: 10px;
 }
 
 #insightBlurb h1 {margin-top: 5px; height: 27px;}
@@ -38,14 +41,16 @@ footer{text-align: right; margin-right: 1rem;}
 
 #advert h2, #advert p{margin-left: 1rem; margin-right: 1rem; color: rgb(18, 67, 31)}
 
+#h4{ font-size: 20px; width: 670px;}
 #mainText {margin-left: 0px; margin-bottom:0px;}
 
-li {margin-bottom: 1rem;}
-#blackDisplay p{max-width: 827px; color: white; text-align: left; column-count: 3; padding-left: 60px; padding-right: 60px; padding-bottom: 25px;}
+li {margin-bottom: 1rem; font-size: 23px;}
+
+#blackDisplay p{max-width: 1086px; color: white; text-align: left; column-count: 4; padding-left: 60px; padding-right: 60px; padding-bottom: 25px; font-size: 23px;}
 
 #blackDisplay h1{color: rgb(3, 160, 228); text-align: left; padding-top: 8px; margin-left: 1rem;}
 
-#blackDisplay article{background-color: black; width: 909px; margin-left: 300px; position: relative; transform: translateY(7px)}
+#blackDisplay article{background-color: black; width: 1190px; margin-left: 300px; position: relative; transform: translateX(-12pc) translateY(7px)}
 
 #blackDisplay article>:not(#diagonalImage){
     position: relative;
@@ -53,10 +58,33 @@ li {margin-bottom: 1rem;}
 }
 
 #collection{width:700px; height: auto; transform: translateX(300px) translateY(5px)}
-#diagonalImage{float: left; transform:rotate(45deg); padding-top: 25px; width: 285px; position: absolute; left:-15rem; shape-outside:url("../media/sideways element.png")}
-#cornerWrap{float: left; shape-outside: url("../media/sideways element.png"); shape-margin: 15px; shape-image-threshold: 0.5px;}
+#diagonalImage{float: left; transform: translateX(33px) translateY(95px); padding-top: 25px; width: 410px; position: absolute; left:-15rem; shape-outside:url("../media/sideways element.png")}
 
-#bestHeader{transform: translateX(300px) translateY(31px);}
+#bestHeader{transform: translateX(107px) translateY(31px);}
+
+/*navBar*/
+#subMenu{
+    width: 512px;
+    height: 512px;
+    background: url("../media/menuIcon.png") no-repeat;
+    text-indent: -9999px; 
+}
+
+ul .menu{
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.menu a{
+    display: block; 
+    background: beige; 
+    padding: 10px; 
+    color: rgb(3, 160, 228); 
+    text-decoration: none; 
+}
 
 /*footer*/ 
 #seasonIssued{padding-left: 30px;}
@@ -75,8 +103,9 @@ li {margin-bottom: 1rem;}
 /*overall website layout*/
 #wrapper{  /*mobile*/ 
     display: grid;  /*don't define rows and columns because everything appears after the other*/
-    grid-template-rows: auto auto auto 400px auto;
+    grid-template-rows: auto auto 800px auto 550px auto;
     grid-template-areas: 
+        "menu"
         "header"
         "content" 
         "sidebar"
@@ -88,8 +117,8 @@ li {margin-bottom: 1rem;}
 /*move  sidebar into first column for tablets*/
 @media(min-width: 850px){
     #wrapper{ 
-        grid-template-columns: 1199px 203px; /*scaled image down by 85%*/ 
-        grid-template-rows: 674px 500px 380px auto;
+        grid-template-columns: 1199px 235px; /*scaled image down by 85%*/ 
+        grid-template-rows: 674px 800px 550px auto;
         grid-template-areas: 
             "header    sidebar"
             "content   sidebar"
@@ -97,20 +126,23 @@ li {margin-bottom: 1rem;}
             "footer    footer"
     }
 
+    #navBar{grid-area: sidebar;}
     #flexContent section{
         margin-left: auto; }
 
     #blackDisplay{
         text-align: right;
         margin-right: 1rem; 
-        justify-self: flex-start; /*centering*/
+        justify-self: center; 
     }
 
     #blackDisplay h1{margin-top: 10px;}
-    #bestHeader{margin-right: 814px; transform: translateX(180px) translateY(26px);}
+    #bestHeader{margin-right: 814px; transform: translateX(-100px) translateY(3px);}
     #blackDisplay p{float: center; margin-right: 15px; padding-left: 60px; padding-bottom: 0px;}
-    #blackDisplay article{float: right; margin: 0px; transform:translateY(2px);}
+    #blackDisplay article{float: right; margin: 0px; transform:translateY(-20px);}
+    #diagonalImage{transform: translateX(33px) translateY(130px);}
     #collection{transform: translateX(0px);}
+
     @media(min-width: 1457px){
         #wrapper{justify-content: center;}
     } 
@@ -120,6 +152,7 @@ li {margin-bottom: 1rem;}
 
 
 /*define what text belongs in what section of the grid*/
+#navBar{grid-area: menu;}
 #pageHeader{grid-area: header; }
 #bulletSidebar{grid-area: sidebar; margin-left: 1rem; margin-right: 12px;}
 #content{grid-area: content;} 
