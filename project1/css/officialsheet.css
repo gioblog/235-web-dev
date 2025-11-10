@@ -202,8 +202,6 @@ ul.menu li:hover ul {
 
 }
 
-
-
 /*define what text belongs in what section of the grid*/
 ul.menu{grid-area: menu;}
 #pageHeader{grid-area: header; }
@@ -239,4 +237,3 @@ footer{grid-area: footer;}
     left: 88%;
 }
 #descriptor{position: absolute; top:94%; right: 83%; transform: translate(-94% -83%)}
-
