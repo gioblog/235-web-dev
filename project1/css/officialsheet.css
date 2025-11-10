@@ -64,13 +64,18 @@ li {margin-bottom: 1rem; font-size: 23px;}
 #bestHeader{transform: translateX(107px) translateY(31px);}
 
 /*navBar*/
-#menuToggle{ 
+/* #menuToggle{ 
     display: block;
     width: 70px;
     height: 70px;
     background: url("../media/menuIcon.png") no-repeat center center;
     text-indent: -9999px;
     margin-left: 16px;
+} */
+
+#menuToggle img{
+    width: 60px; 
+    height: auto; 
 }
 
 ul.menu{
@@ -81,12 +86,13 @@ ul.menu{
     flex-wrap: wrap; 
 }
 
-.menu a{
+.submenu a{
     display: block; 
     background: beige; 
     padding: 10px; 
     color: rgb(3, 160, 228); 
     text-decoration: none; 
+    width: fit-content; 
 }
 
 .menu a:hover {
@@ -96,8 +102,9 @@ ul.menu{
 }
 
 .menu li {
-    width: 90px;
+    width: 60px;
     position: relative;
+    margin-left: 16px; 
 }
 
 ul.menu ul li {
