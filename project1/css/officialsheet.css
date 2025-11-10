@@ -27,6 +27,7 @@ footer{text-align: right; margin-right: 1rem;}
         margin-left: 6rem; 
         margin-top: 1rem; 
         background-color: rgb(154, 252, 221); 
+        border: 15px outset rgb(43, 133, 103);
         max-width: 400px;
         height: 573px; 
         padding-left: 10px; 
@@ -63,14 +64,16 @@ li {margin-bottom: 1rem; font-size: 23px;}
 #bestHeader{transform: translateX(107px) translateY(31px);}
 
 /*navBar*/
-#subMenu{
-    width: 512px;
-    height: 512px;
-    background: url("../media/menuIcon.png") no-repeat;
-    text-indent: -9999px; 
+#menuToggle{ 
+    display: block;
+    width: 70px;
+    height: 70px;
+    background: url("../media/menuIcon.png") no-repeat center center;
+    text-indent: -9999px;
+    margin-left: 16px;
 }
 
-ul .menu{
+ul.menu{
     list-style: none; 
     margin: 0; 
     padding: 0; 
@@ -84,6 +87,48 @@ ul .menu{
     padding: 10px; 
     color: rgb(3, 160, 228); 
     text-decoration: none; 
+}
+
+.menu a:hover {
+    transform:scale(1.1);
+	background: rgb(32, 32, 67);
+	color: beige;
+}
+
+.menu li {
+    width: 90px;
+    position: relative;
+}
+
+ul.menu ul li {
+    width:100%;
+}
+
+ul.menu ul {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0; 
+    width: 200px; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    z-index: 5; 
+}
+
+ul.menu li:hover ul {
+    display: flex;
+    flex-direction: column;     
+}
+
+.menu .submenu li>a:hover {
+    background: rgb(32, 32, 67);
+    color: beige;
+}
+
+@media screen and (max-width:550px){
+    .menu li{width: 100%;}
+    ul.menu ul{position: static; width:100%;}
 }
 
 /*footer*/ 
@@ -126,7 +171,8 @@ ul .menu{
             "footer    footer"
     }
 
-    #navBar{grid-area: sidebar;}
+    ul.menu{grid-area: sidebar;}
+    #bulletSidebar{transform: translateY(-35pc);}
     #flexContent section{
         margin-left: auto; }
 
@@ -152,7 +198,7 @@ ul .menu{
 
 
 /*define what text belongs in what section of the grid*/
-#navBar{grid-area: menu;}
+ul.menu{grid-area: menu;}
 #pageHeader{grid-area: header; }
 #bulletSidebar{grid-area: sidebar; margin-left: 1rem; margin-right: 12px;}
 #content{grid-area: content;} 
