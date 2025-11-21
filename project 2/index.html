@@ -14,12 +14,18 @@
     <h3>For all your character tracking needs</h3>
 
     <div id="userInteraction"> 
-        <div> <input id="userSearch" type="text" size="20" maxLength="40" autofocus value="Enter A Character or Location"> </div> <!--search term-->
+        <div> <input id="searchBar" type="text" size="20" maxLength="40" autofocus value="Enter A Character"> </div> <!--search term-->
+        
         <a id="filter">Filter</a>
+        <select name="searchOptions" id=""
         <ul id="filterOptions">
-            <li>Hide Alive Status</li>
-            <li></li>
+            <li>Show Life Status</li>
+            <li>Show Episodes</li>
+            <li>Show Location</li>
         </ul>
-    </div>
+        <!--sort by who showed up in the show earlier-->
+        <button type="button" id="searchButton">Search It Broh</button>
+
+    </div> 
 </body>
 </html>
