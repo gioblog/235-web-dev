@@ -8,24 +8,32 @@
 </head>
 
 <body>
-     <header>
-        <h1>Rick & Morty Updater</h1> 
-    </header>
-    <h3>For all your character tracking needs</h3>
+    <div id="wrapper">
+        <header>
+            <h1>Rick & Morty Updater</h1> 
+        </header>
+        <h3>For all your character tracking needs</h3>
 
-    <div id="userInteraction"> 
-        <div> <input id="searchBar" type="text" size="20" maxLength="40" autofocus value="Enter A Character"> </div> <!--search term-->
+        <div id="userInteraction"> 
+            <div> <input id="searchBar" type="text" size="20" maxLength="40" autofocus value="Enter A Character"> </div> <!--search term-->
         
-        <a id="filter">Filter</a>
-        <select name="searchOptions" id=""
-        <ul id="filterOptions">
-            <li>Show Life Status</li>
-            <li>Show Episodes</li>
-            <li>Show Location</li>
-        </ul>
-        <!--sort by who showed up in the show earlier-->
-        <button type="button" id="searchButton">Search It Broh</button>
+            <a id="filter">Filter</a>
+            <select name="searchOptions" id="filterList" multiple>
+                <option>Show Life Status</option>
+                <option>Show Episodes</option>
+                <option>Show Location</option>
+            </select>
+            <!--sort by who showed up in the show earlier-->
+            <!--seasons pulldown (can choose a season or search through all)-->
 
-    </div> 
+            <button type="button" id="searchButton">Search It Broh</button>
+            <div id="status"></div>
+            <hr>
+        </div>  
+        <h2>Results</h2>     
+        <div id="content">
+            <p>Na-da</p>
+        </div> 
+    </div>
 </body>
 </html>
