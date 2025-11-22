@@ -1,2 +1,10 @@
+body{background-color: gray;}
 h3{font-style: italic;}
-#wrapper{text-align: center;}
+
+#wrapper{
+    text-align: center;
+}
+
+/*user interactions*/ 
+#userInteraction{display: flex; flex: center;}
+#searchBar{margin: auto 1rem 3rem 1rem;}
