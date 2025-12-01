@@ -96,7 +96,7 @@ function DataLoaded(e)
 				//you can get or set the .innerHTML property 
         let title = `<h2>Results</h2>`
         document.querySelector("#content").innerHTML += title; 
-		document.querySelector("#content").innerHTML += bigString; 
+		document.querySelector("#content").innerHTML = bigString; 
 		document.querySelector("#status").innerHTML = "<b>Success!</b><p><i>Here are " + results.length + " results for '" + displayTerm + "'</i></p>"; //updates the text below the search button 
 	}
 +
