@@ -43,11 +43,15 @@ button{
 
 /*Results display*/ 
 #content{
-    margin: 0 auto; /*ditribute content across the screen evenly to avoidiung touch both sides*/
+    margin: 4px auto; /*ditribute content across the screen evenly to avoidiung touch both sides*/
     width: 90%; 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* repsonsive layout */ 
     gap: 20px; /*spacing between grid elements*/
 }
 
-/* .result{display: flex; flex-direction: column;} */
+.result{display: flex; flex-direction: column;} 
+
+.result img{
+	width: 100%; 
+}

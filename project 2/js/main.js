@@ -2,6 +2,7 @@
 window.onload = (e) => {document.querySelector("#searchButton").onclick = SearchButtonClicked}; 
 
 let displayTerm = "";
+let lastSearch; //declare storage variable 
 
 function SearchButtonClicked()
 {
@@ -14,6 +15,7 @@ function SearchButtonClicked()
 
     let searchTerm = document.querySelector("#searchBar").value; //grab user input 
     displayTerm = searchTerm; 
+    lastSearch = localStorage.getItem(displayTerm); //storing last term searched
 
     //parse user input 
     searchTerm = searchTerm.trim(); //get rid of leading & trailing spaces 
@@ -76,11 +78,10 @@ function DataLoaded(e)
 			let smallURL = result.image; 
 		    //api comes with a default image if no image is avaliable 
 
-			//build div to hold the results - could also use concatenation, but that is messy 
+			//build div to hold the results
 			let line = `<div class='result'><img src='${smallURL}' title= '${result.id}' />`; 
 			line += `<span><p> ${result.name}</p>`; 
-			line += `<p>Origin: ${result.origin.name}</p></span><div>`;
-
+			line += `<p>Origin: ${result.origin.name}</p></span></div>`;
             //trying to display episode title 
 
             // let episodeURL = result.episode[0]; 
@@ -95,9 +96,12 @@ function DataLoaded(e)
 			//finds the first HTML element that matches the specified id and accesses the content with the element via the .innerHTML property 
 				//you can get or set the .innerHTML property 
         let title = `<h2>Results</h2>`
-        document.querySelector("#content").innerHTML += title; 
+        document.querySelector("#contentTitle").innerHTML = title; 
 		document.querySelector("#content").innerHTML = bigString; 
 		document.querySelector("#status").innerHTML = "<b>Success!</b><p><i>Here are " + results.length + " results for '" + displayTerm + "'</i></p>"; //updates the text below the search button 
+
+        //local storage 
+        console.log(lastSearch); 
 	}
 +
     function GetEpisodeData(url)
