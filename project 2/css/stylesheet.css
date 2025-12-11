@@ -6,8 +6,14 @@ h3{font-style: italic;}
 }
 
 /*user interactions*/ 
-#userInteraction{display: flex; flex: center;}
-#searchBar{margin: auto 1rem 3rem 1rem;}
+#searchFeature{
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+	margin-top: 25vh; 
+}
+
+#searchBar{margin: auto 1rem 3rem 1rem; }
 button{
 		  display : inline-block;
 		  cursor : pointer;
@@ -24,22 +30,34 @@ button{
 		  text-decoration : none;
 		}
 		
-		button{
-			border-color: #010200;
-	  		background: #378400;
-	  	    background: linear-gradient(top, #378400 0%,#255c01 100%);
-		}
-		
-		button:hover{
-			background: #549e01;
-		}
-		
-		button:active{
-			background: #549e01;
-			box-shadow : 0 0 6px rgba(0,0,0,.6);
-		}
-		
-		button:focus{outline:0;}
+button{
+	border-color: #010200;
+	background: #378400;
+	background: linear-gradient(top, #378400 0%,#255c01 100%);
+}
+
+button:hover{
+	background: #549e01;
+}
+
+button:active{
+	background: #549e01;
+	box-shadow : 0 0 6px rgba(0,0,0,.6);
+}
+
+button:focus{outline:0;}
+
+#filter{padding-right: 10px;}
+
+#belowSearch{
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; 
+}
+
+#filterList{padding: 5px;}
+#hideDefaultImg{margin-left: 50px;}
 
 /*Results display*/ 
 #content{

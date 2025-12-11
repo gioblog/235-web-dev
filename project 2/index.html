@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Rick & Morty</title>
   <link rel="stylesheet" href="css/stylesheet.css">
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script> <!-- have the JS load after the HTML has finished parsing to avoid TypeError with search bar-->
 </head>
 
 <body>
@@ -16,19 +16,23 @@
 
         <div id="userInteraction"> 
             <!-- id want the size to e in relation to a percentage of the viewport -->
-            <div> <input id="searchBar" type="text" size="50" maxLength="40" autofocus value="Enter A Character"> </div> <!--search term-->
-        
+             <div id="searchFeature">
+                <div> <input id="searchBar" type="text" size="50" maxLength="40" autofocus value="Enter A Character"> </div> <!--search term-->
+                <button type="button" id="searchButton">Search It Broh</button>
+             </div>
+            
+        <div id="belowSearch">
             <a id="filter">Filter</a>
             <select name="searchOptions" id="filterList" multiple>
-                <option>Show Life Status</option>
-                <option>Show Episodes</option>
-                <option>Show Origin</option>
+                <option value="life">Show Life Status</option>
+                <option value="species">Show Species</option>
+                <option value="origins">Show Origin</option>
             </select>
-            <!--sort by who showed up in the show earlier-->
-            <!--seasons pulldown (can choose a season or search through all)-->
 
-            <button type="button" id="searchButton">Search It Broh</button>
-            <div id="status"></div>
+            <input type="checkbox" id="hideDefaultImg" name="userSelect" value="Don't Display Chars Who Have No Image">
+            <label for="userSelect">Don't Display Chars Who Have No Image</label>
+        </div>
+        <div id="status"></div>
         </div> 
         
         <div id="contentTitle">
