@@ -4,7 +4,14 @@
   <meta charset="UTF-8">
   <title>Rick & Morty</title>
   <link rel="stylesheet" href="css/stylesheet.css">
-  <script src="js/main.js" defer></script> <!-- have the JS load after the HTML has finished parsing to avoid TypeError with search bar-->
+  
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  
+  <!-- have the JS load after the HTML has finished parsing to avoid TypeError with search bar-->
+  <script src="js/main.js" defer></script> 
 </head>
 
 <body>
@@ -30,8 +37,9 @@
             </select>
 
             <input type="checkbox" id="hideDefaultImg" name="userSelect" value="Don't Display Chars Who Have No Image">
-            <label for="userSelect">Don't Display Chars Who Have No Image</label>
+            <label for="hideDefaultImg">Don't Display Chars Who Have No Image</label>
         </div>
+        <p id="userDirections">Hold ctrl to select multiple filters</p>
         <div id="status"></div>
         </div> 
         

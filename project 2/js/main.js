@@ -15,8 +15,6 @@ if(storedTerm){
 
 function SearchButtonClicked()
 {
-    console.log("search button function started"); 
-
     //change CSS to account for search 
     document.getElementById("searchFeature").style.margin = '2px 0px'; 
    
@@ -31,14 +29,16 @@ function SearchButtonClicked()
     searchTerm = searchTerm.trim(); //get rid of leading & trailing spaces 
     searchTerm = encodeURIComponent(searchTerm); //encoded representation in UTF-8 
     
-    if(searchTerm.length < 1) return; //no input was given 
+    if(searchTerm.length < 1)
+    {
+        document.querySelector("#content").innerHTML = "Please enter a search term in the bar"; 
+        return; //no input was given 
+    } 
 
     url += "?name=" + searchTerm; //add to url -- user can only typle in char names 
     //the additions of filters here
 
     document.querySelector("#status").innerHTML = "Finding '" + displayTerm + "' broh"; 
-
-    console.log(url); 
     GetData(url); 
 }
 
@@ -60,14 +60,8 @@ function GetData(url){
 function DataLoaded(e) 
 {
     let xhr = e.target; 
-    console.log("target" + e.target);  
-    console.log(xhr.responseText); 
-    console.log(xhr.responseText.length); 
 
     let obj = JSON.parse(xhr.responseText); //doesn't work for other search terms 
-    console.log(obj); 
-    console.log(obj.results); 
-    //console.log(obj.data.length); 
 
     if(!obj.results || obj.results.length == 0) //if there are no results, print a message and return 
 		{
@@ -79,18 +73,15 @@ function DataLoaded(e)
 
 		//display to the user 
 		let results = obj.results; 
-		console.log("results.length = " + results.length); 
 		let bigString = ""; //HTML string for user result
 
 		for(let i = 0; i < results.length; i++)
 		{
 			let result = results[i]; 
-            console.log(document.getElementById("hideDefaultImg").checked); 
 			let smallURL = result.image; 
 		    //api comes with a default image if no image is avaliable 
 
             let userChoice = document.getElementById("filterList").selectedOptions;
-            console.log(userChoice); 
             let valuesCollected = Array.from(userChoice).map(({value}) => value); 
 			//build div to hold the results
 			let line = `<div class='result'><img src='${smallURL}' title= '${result.id}' />`; 
@@ -139,7 +130,6 @@ function DataLoaded(e)
 		document.querySelector("#status").innerHTML = "<b>Success!</b><p><i>Here are " + results.length + " results for '" + displayTerm + "'</i></p>"; //updates the text below the search button 
 
         //local storage 
-        console.log(storedTerm); 
 	}
 +
     // function GetEpisodeData(url)
