@@ -27,8 +27,8 @@
         GameTurn(); //first customer 
 
         //add items in shop 
-        let stock = `<img id="drink1" data-orderAppearance="cocoa" src="../media/cocoa.png"  draggable="true" ondragstart="dragStartHandler(event)"/>`;
-        stock += `<img id="food1" data-orderAppearance="tiramisu" src="../media/tiramisu.png" draggable="true"   ondragstart="dragStartHandler(event)" /  >`;
+        let stock = `<img id="drink1" data-orderAppearance="cocoa" src="media/cocoa.png"  draggable="true" ondragstart="dragStartHandler(event)"/>`;
+        stock += `<img id="food1" data-orderAppearance="tiramisu" src="media/tiramisu.png" draggable="true"   ondragstart="dragStartHandler(event)" /  >`;
 
         document.getElementById("cafeItems").innerHTML = stock; 
     }
@@ -202,7 +202,7 @@
 
             document.querySelector(".orderDisplayed").classList.add(this.item); 
             document.querySelector(".orderDisplayed").setAttribute("data-orderAppearance", this.item); 
-            document.querySelector("#speechBubble").innerHTML = `<img src='${"../media/speech.png"}'/>`; //include speech bubble
+            document.querySelector("#speechBubble").innerHTML = `<img src='${"media/speech.png"}'/>`; //include speech bubble
         }
 
         remove()
