@@ -6,9 +6,45 @@
   <link rel="stylesheet" href="css/proposal-stylesheet.css">
 </head>
 <body>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API">How To Make Drag & Drop In HTML</a>
-    <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates Sorting Algorithim</a>
+  <header>
+     <h1>Documentation Page</h1>
+  </header>
 
-    <p>Randomly display customer order proved challenging</p>
+  <h2>Sources</h2>
+  <ul>
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API">How To Make Drag & Drop In HTML</a>
+    </li>
+    <li>
+       <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates Sorting Algorithm</a>
+    </li>
+    <li>
+         <a href="https://www.w3schools.com/html/html5_audio.asp">Audio</a>
+    </li>
+    <li>
+        <a href="https://stackoverflow.com/questions/20618355/how-to-write-a-countdown-timer-in-javascript">Countdown Timer Implementation</a>
+    </li>
+    <li>
+       <a href="https://pixabay.com/sound-effects/game-music-loop-7-145285/">Background Music Used</a>
+    </li>
+  </ul> <hr> 
+
+    <h2>Process & Requirements</h2>
+    <p> I started the project by drawing the minimum needed elements for my game: two customers, two cafe items, background, & speech bubble. Then, I started the HTML with a similar structure to the chibi matching game. 
+      Randomly displaying customer order proved challenging because I was confused how the chibi game was adding the visual classes. It also took me many re-reads of the patterns code and the classList.add documentation to understand how it worked.
+      I had difficulty implementing drag and drop because I kept mispelling appearance and the cocoa was under some unknown element, so i had to set its z-index to 2 in order to get it to work. 
+      I didn't discover the layering issue for awhile though. I didn't get to add all the gameplay complexities I originally wanted due to my issues with drag and drop, 
+      not accounting for how long it'd take me to draw the game elements (I'm a really slow artist), and the rabbit hole I fell into learning about the Fisher-Yates 
+      Algorithm. It's super facinating.</p> <br>
+
+    <p>For my technology stck I used JavaScript & DOMs. I use DOM to query for elements and amnipulate. For example, like the chibi game, I query for certain classes to
+       set the attribute. My game is simple for a user to understand because there is not much explanation needed and how to play isclearly displayed below the game.
+        The dseign is pleasin because I drew it myself. I made the customer entity be a class to meet the ES6 requirement. That way I could easily reference the the
+        customer type with the order type.</p> <hr>
+
+    <h2>Final Thoughts</h2>
+    <p>I'm really proud with the final product even if it isn't as complex as my original idea. If you watch your money after serving a customer, you will see it 
+      enlarge for a little bit before going back to normal. This may be a very unpopular opinion, but I love alert systems so I used it for my game over screen.
+      I'm continuing this project over winter break, so if you have any feedback for future development please let me know :></p>
 </body>
 </html>

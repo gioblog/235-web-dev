@@ -1,17 +1,32 @@
+@font-face{font-family: Chide; src: url(../media/Chicle-Regular.ttf);}
 
 body{
-    /* min-height: 100vh; 
-    margin: 0px; */
     background: rgb(216, 185, 144); 
 }
 
+/* tutorial - for future development the way it adapts to smaller sizes will need to be changed */
 article{
     position: absolute; 
-    bottom: 140px; 
+    bottom: 9px; 
+    margin-left: 40px; 
+    background-color: rgba(255, 246, 227, 0.336);
+    border-radius: 10px;
+    margin-left: 2vw;
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
 }
 
 article h2{
-    margin-left: 40px; 
+    font-family: Chide; 
+    letter-spacing: 3px; 
+    color: rgb(175, 143, 250);
+    font-size: 30px; 
+}
+
+article p{
+    font-size: 20px; 
 }
 
 /* Heads Up Display */
@@ -47,13 +62,14 @@ article h2{
 
 }
  
-/* stocking cafe shelves */
+/* cafe shelves */
+
 #drink1 {
     position: relative; 
     bottom: -233px; 
     right: 30px; 
     width: 115px; 
-
+    z-index: 2; 
 }
 
 #food1 {
