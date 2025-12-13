@@ -1,0 +1,142 @@
+
+body{
+    /* min-height: 100vh; 
+    margin: 0px; */
+    background: rgb(216, 185, 144); 
+}
+
+article{
+    position: absolute; 
+    bottom: 140px; 
+}
+
+article h2{
+    margin-left: 40px; 
+}
+
+/* Heads Up Display */
+#HUD{
+    display: flex;
+    flex-flow: row nowrap; 
+    position: relative; 
+    left: 62%; 
+    top: -345px; 
+    z-index: 1; 
+    font-size: 20px; 
+}
+
+#timer{position: relative; left: -582px; color: rgb(231, 87, 125);}
+#money{position: relative; left: 275px; color: rgb(231, 87, 125);}
+
+/* game screen setup */
+#game{
+    margin: 0px;
+    background: linear-gradient(to bottom, rgb(253, 253, 180) 0 50%, rgb(147, 83, 147) 50%); 
+
+    position: absolute; 
+    background: rgb(253, 253, 180) url(../media/background.png);
+    width: 985px; 
+    height: 753px; 
+
+    /* position of game within viewport */
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    top: 15px; 
+    left: 19vw; 
+
+}
+ 
+/* stocking cafe shelves */
+#drink1 {
+    position: relative; 
+    bottom: -233px; 
+    right: 30px; 
+    width: 115px; 
+
+}
+
+#food1 {
+    position: relative; 
+    bottom: -246px; 
+    left: -657px; 
+    width: 143px; 
+}
+
+
+/* customer visuals */
+.customers{
+    z-index: 1; 
+    width: 650px;
+    height: 650px;  
+    position: relative; 
+    top: 196px; 
+    right: -187px; 
+}
+
+.orderDisplayed{
+    z-index: 2; 
+    width: 150px;
+    height: 150px;  
+    position: relative; 
+    top: -420px; 
+    left: 537px; 
+}
+
+#speechBubble{
+    width: 200px; 
+    position: relative; 
+    bottom: 638px; 
+    right: -507px; 
+    z-index: 1; 
+}
+
+#speechBubble img{
+    width: 200px; 
+    height: auto; 
+}
+
+/* define customer images & order pictures */ 
+.brownBear {background: rgba(165, 42, 42, 0) url(../media/bear.png); background-repeat: no-repeat; background-size: 545px 545px;}
+.greyRabbit {background: rgba(128, 128, 128, 0) url(../media/bunny.png); background-size: 545px 545px;}
+
+.tiramisu {background: rgba(41, 15, 7, 0) url(../media/tiramisu.png); background-repeat: no-repeat; background-size: 150px 150px;}
+.cocoa {background: rgba(255, 0, 0, 0) url(../media/cocoa.png); background-repeat: no-repeat; background-size: 150px 150px;}
+
+/* play button */
+button{
+    position: absolute;
+    left: 45%; 
+    display : inline-block;
+    cursor : pointer;
+    border-style : solid;
+    border-width : 2px;
+    border-radius : 50px;
+    padding : 10px 18px;
+    box-shadow : 0 1px 4px rgba(0,0,0,.6);
+    font-size : 9.5pt;
+    font-weight : bold;
+    color : #fff;
+    text-shadow : 0 1px 3px rgba(0,0,0,.4);
+    font-family : sans-serif;
+    text-decoration : none;
+    width: 100px; 
+    height: 55px; 
+    z-index: 2; 
+}
+		
+button{
+	border-color: #fee6ec;
+	background: #ff9bd2;
+}
+
+button:hover{
+	background: #fc71a2;
+}
+
+button:active{
+	background: #fc71a2;
+	box-shadow : 0 0 6px rgba(0,0,0,.6);
+}
+
+button:focus{outline:0;}

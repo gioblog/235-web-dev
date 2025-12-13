@@ -66,7 +66,7 @@ function DataLoaded(e)
     if(!obj.results || obj.results.length == 0) //if there are no results, print a message and return 
 		{
 			document.querySelector("#status").innerHTML = "Can't find anything for '" + displayTerm + "' broh"
-			let nothingLine = `<div class='result'><img src='${"media/cant-find.jpg"}' />`; 
+			let nothingLine = `<div class='result'><img src='${"media/cant-find.jpg"}'/>`; 
             document.querySelector("#content").innerHTML = nothingLine; 
             return; 
 		}

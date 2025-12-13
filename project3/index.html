@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sugar Rush</title>
+  <link rel="stylesheet" href="css/game-stylesheet.css">
+</head>
+<body>
+
+   <section id="game">
+        <section id="HUD">
+            <!-- <h3 id="timer">0:00</h3>
+            <h3 id="money">$0</h3>  -->
+        </section>
+        <div id="customers">
+            <div class="customers">
+                <!-- ex. background: url("media/bear.png")  --> 
+            </div>
+             <div class="orderDisplayed" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
+                <!-- ex. background: url("media/cocoa.png") --> 
+            </div>
+            <div id="speechBubble">
+                    <!-- insert image via customer class; made it its own div container because i need the image behind the background image (which is the food order) 
+                     of orderDisplayed div -->
+            </div>
+            <div class="orderGone"></div>
+        </div>
+        <div id="startGame">
+            <button type="button" id="startButton">Play</button>
+        </div>
+        <div id="cafeItems">
+            <!-- ex. <img src="media/tiramisu.png"> -->
+        </div>
+   </section>
+
+    <article>  
+        <h2>How To Play</h2>
+        <p></p>
+   </article>
+   
+<script>
+    window.onload = (e) => {document.querySelector("#startButton").onclick = StartGame}
+    let customerSet = ["brownBear", "greyRabbit"]; 
+    let orderSet = ["tiramisu", "cocoa"]; 
+
+    function StartGame()
+    {
+        //add HUD 
+        let headsUp = `<h3 id="timer">0:00</h3>`; 
+        headsUp += `<h3 id="money">$0</h3> `;
+        let moneyTracker = 0; //need to update money somehow throughout all these different functions 
+        document.getElementById("HUD").innerHTML = headsUp; 
+
+        //setup for the first order - make a randomized array out of the array of possible objects and then go through each one to use as the next customer 
+        let randCustomers = RandomSort(customerSet); //group 
+        let randOrders = RandomSort(orderSet); 
+
+        let customer = new CustomerOrder(randCustomers.pop(), randOrders.pop()); 
+        //visually add character to scene 
+        customer.image(); 
+
+        //add items in shop 
+        let stock = `<img id="drink1" data-orderAppearance="cocoa" src="../media/cocoa.png"  draggable="true" ondragstart="dragStartHandler(event)">`;
+        stock += `<img id="food1" data-orderAppearance="tiramisu" src="../media/tiramisu.png" draggable="true"   ondragstart="dragStartHandler(event)" >`;
+
+        document.getElementById("cafeItems").innerHTML = stock; 
+        document.getElementById("startButton").remove(); //bye bye play button 
+
+        // check if the customer has disappeared, if so then update the money tracker by adding $5
+
+        console.log("completed"); 
+
+    }
+
+    //represents a turn (an order) within the game
+    function GameTurn()
+    {
+        //establish the sorted array outside of this function in main 
+        //take the sorted array as an argument to use to create an order - how would it know which combination it has alr done? 
+    }
+
+    // drag & drop needed functions 
+    //dragging an item 
+    function dragStartHandler(e)
+    {
+        console.log("hey im tryna drag"); 
+        const item = e.target.getAttribute('data-orderApperance'); 
+        e.dataTransfer.setData("text", item); 
+    }
+
+    function dragOverHandler(e)
+    {
+        e.preventDefault(); //allow a drop happen on this element by ignoring the default case (no drops on the element can occur)
+    }
+
+    //when the element is released 
+    //the player has to drop the item onto the speech bubble 
+    function dropHandler(e)
+    {
+        e.preventDefault(); //default case: opens as a link 
+        const data = e.dataTransfer.getData("text"); //collect Id of the drop (the data that is targeted in the start function)
+        //check if the dataset is the same as the order  
+        if(e.target.getAttribute('data-orderApperance') == data)
+        {
+            console.log("omg they are equal"); 
+        } 
+        
+    }
+
+    //Fisher-Yates algorithm to randomly sort array
+    function RandomSort(array)
+    {
+        for(let i = array.length - 1; i > 0; i--)
+        {
+            let randIndex = Math.floor(Math.random() * (i + 1)); 
+            //swap elements 
+            let k = array[i]; 
+            array[i] = array[randIndex]; 
+            array[randIndex] = k; 
+        } 
+        console.log(array); 
+        return array; //sorted array 
+        //return Math.floor(Math.random() * int)
+    }
+
+    // ES6 Requirement 
+    //class that creates a customer object when given 
+    class CustomerOrder
+    {
+        constructor(customer, item)
+        {
+            //both were popped off their respective arrays 
+            this.customer = customer; 
+            this.item = item; 
+        }
+
+        image() //adding the images of the customer and their order 
+        {
+            document.querySelector(".customers").classList.add(this.customer); 
+            document.querySelector(".customers").setAttribute("data-customerAppearance", this.customer); 
+
+            document.querySelector(".orderDisplayed").classList.add(this.item); 
+            document.querySelector(".orderDisplayed").setAttribute("data-orderAppearance", this.item); 
+            document.querySelector("#speechBubble").innerHTML = `<img src='${"../media/speech.png"}'/>`; //include speech bubble
+        }
+    }
+</script>
+
+   <!-- set a time for the whole round (day) -->
+   <!-- set a time for each order, -->
+        <!-- at a certain point, change the image of the order to be a silhouette -->
+        <!-- images are draggable by default -->
+
+   <!-- Customers will appear at the window with a text bubble that shows what food item they want to order.
+     After a certain amount of time, the order image will disappear. The more difficult customers will display their order in a shorter time and/or only show the 
+     silhouette of their desired food item. To fulfill an order, the player has to click on the right food item. There will also be a time limit of how long the player
+     has to choose an item. To teach players how to play there will be a small instruction guide to the side of the game view. -->
+
+</body>
+</html>
